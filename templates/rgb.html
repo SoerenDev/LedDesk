@@ -5,13 +5,12 @@
 </head>
 
 <body>
-    <form action="" method="post" />
-    <p>Welches ist Ihr Lieblingseis?</p>
-    <input type="text" name="red" />
-    <input type="text" name="green" />
-    <input type="text" name="blue" />
-    <input type="submit" />
-    </form>
+    <input type="range" min="0" max="255" class="slider" name="red" id="red">
+    <input type="range" min="0" max="255" class="slider" name="green" id="green">
+    <input type="range" min="0" max="255" class="slider" name="blue" id="blue">
+    <form action = "http://127.0.0.1:5000/" method = "post" />
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script> 
 </body>
 
 </html>

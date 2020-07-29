@@ -3,23 +3,21 @@ var green = document.getElementById("green");
 var blue = document.getElementById("blue");
 
 red.oninput = function () {
-    data = "red=" + this.value; 
-    sendData(data);
+    sendData();
 }
 
 green.oninput = function () {
-    data = "green=" + this.value;
-    sendData(data);
+    sendData();
 }
 
 blue.oninput = function () {
-    data = "blue=" + this.value;
-    sendData(data);
+    sendData();
 }
 
-function sendData(data) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send(data);
+function sendData() {
+    var data = "red=" + red.value + "&green=" + green.value + "&blue=" + blue.value;
+    var request = new XMLHttpRequest();
+    request.open('POST', '', true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send(data);
 }
